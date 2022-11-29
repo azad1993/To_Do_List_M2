@@ -1,0 +1,32 @@
+.main {
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  margin: 232px auto;
+  width: 336px;
+  height: 236px;
+  background: linear-gradient(#ffdc40 10%, rgba(204, 0, 0, 0) 10%);
+}
+
+.text {
+  position: relative;
+  margin: 41px 22px 19px 28px;
+}
+
+.myH {
+  margin: 0 65px;
+}
+
+img {
+  position: relative;
+  top: 16px;
+  left: 250px;
+}
+
+input {
+  position: relative;
+  margin: 0 22px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  width: 286px;
+  height: 40px;
+}
