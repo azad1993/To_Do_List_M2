@@ -19,7 +19,6 @@ document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         myDiv.style.display = 'block'
         arr.push(myInput.value)
-        
         myText.innerHTML += `<li>${myInput.value}</li>`
     
     }
@@ -34,10 +33,13 @@ clear.addEventListener('click', ()=>{
 plus.addEventListener('click', ()=>{
     myInput.style.display = 'block'
     clear.style.display = 'block'
+    
 })
 
-icon.addEventListener('click', ()=>{
-    if(icon.src == "/src/Group73.png"){
+icon.addEventListener('click', (e)=>{
+    
+    var src = e.target.src
+    if(src == "/src/Group73.png"){
         icon = "/src/Group91.png"
         arr.sort()
         arr.forEach((item,index)=>{
