@@ -3,8 +3,8 @@
   border-radius: 10px;
   margin: 232px auto;
   width: 336px;
-  height: 236px;
-  background: linear-gradient(#ffdc40 10%, rgba(204, 0, 0, 0) 10%);
+  /* height: 236px; */
+  background: linear-gradient(#ffdc40 8%, rgba(204, 0, 0, 0) 8%);
 }
 
 .text {
@@ -29,4 +29,64 @@ input {
   border-radius: 10px;
   width: 286px;
   height: 40px;
+}
+.inputdiv{
+  position: relative;
+}
+.clear{
+  position: absolute;
+  top: 12px;
+  left: 280px;
+  }
+  .clear:hover{
+   background-color: #833ae0;
+   border-radius: 50%;
+  }
+  
+#textdiv{
+  display: none;
+  margin: 0 22px;
+  margin-top: 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  width: 286px;
+  max-height: 150px;
+  overflow-x: hidden;
+}
+
+
+
+.textul{
+  list-style-type: none;
+  padding-left: 5px;
+  padding-right: 200px;
+}
+
+.mybuttondiv {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+
+.mybutton {
+  background: #833ae0;
+  border-radius: 71px;
+  width: 150px;
+  height: 42px;
+  margin: 0 90px;
+  margin-top: 18px;
+  color: white;
+}
+
+.mybutton2 {
+  position: absolute;
+  top: 19.5px;
+  left: 92px;
+  width: 39px;
+  height: 39px;
+  border-color: #833ae0;
+  background: #9953f1;
+  border-radius: 71px;
+  color: white;
 }
