@@ -37,13 +37,13 @@ plus.addEventListener('click', ()=>{
 })
 
 icon.addEventListener('click', ()=>{
-    if(icon.src == "/src/Group 73.png"){
-        icon = "/src/Group 91.png"
+    if(icon.src == "/src/Group73.png"){
+        icon = "/src/Group91.png"
         arr.sort()
         arr.forEach((item,index)=>{
             myText.innerHTML += `<li>${item}</li>`
         })
-
+        console.log('hahaa')
     }
-    console.log('hahaa')
+    
 })
