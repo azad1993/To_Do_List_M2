@@ -30,20 +30,24 @@ input {
   width: 286px;
   height: 40px;
 }
-.inputdiv{
+
+.inputdiv {
   position: relative;
 }
-.clear{
+
+.clear {
   position: absolute;
   top: 12px;
   left: 280px;
-  }
-  .clear:hover{
-   background-color: #833ae0;
-   border-radius: 50%;
-  }
-  
-#textdiv{
+}
+
+.clear:hover {
+  background-color: #833ae0;
+  border-radius: 50%;
+}
+
+
+#textdiv {
   display: none;
   margin: 0 22px;
   margin-top: 20px;
@@ -54,20 +58,17 @@ input {
   overflow-x: hidden;
 }
 
-
-
-.textul{
+.textul {
   list-style-type: none;
   padding-left: 5px;
-  padding-right: 200px;
+  margin: 0;
+  display: inline-block;
 }
 
 .mybuttondiv {
   position: relative;
   margin-bottom: 20px;
 }
-
-
 
 .mybutton {
   background: #833ae0;
