@@ -5,24 +5,28 @@ let myDiv = document.getElementById("textdiv");
 let clear = document.querySelector(".clear");
 let plus = document.querySelector(".mybutton2");
 var icon = document.querySelector("#myicon");
-
-
+var clear2 = document.querySelector("#clear2");
+var count = -1;
 let arr = [];
 
 myButton.addEventListener("click", () => {
   if (myInput.value) {
+    count++;
     myDiv.style.display = "block";
     arr.push(myInput.value);
-    myText.innerHTML += `<img id="clear2" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
+    myText.innerHTML += `<img id="clear${count}" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
+    
   }
 });
 
 document.addEventListener("keypress", function (e) {
   if (myInput.value) {
     if (e.key === "Enter") {
+      count++;
       myDiv.style.display = "block";
       arr.push(myInput.value);
-      myText.innerHTML += `<img id="clear2" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
+      myText.innerHTML += `<img id="clear${count}" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
+      
     }
   }
 });
@@ -46,20 +50,34 @@ icon.addEventListener("click", (e) => {
     arr.sort();
     myText.innerHTML = "";
     arr.forEach((item, index) => {
-      myText.innerHTML += `<img id="clear2" src ="./src/Group77.png"/><li>${item}</li>`;
+      myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`;
     });
   } else {
     icon.src = "./src/Group73.png";
     arr.reverse();
     myText.innerHTML = "";
     arr.forEach((item, index) => {
-      myText.innerHTML += `<img id="clear2" src ="./src/Group77.png"/><li>${item}</li>`;
+      myText.innerHTML += `<img id="clear${
+        index
+      }" src ="./src/Group77.png"/><li>${item}</li>`;
     });
   }
 });
 
+myText.addEventListener("click", (e) => {
+  if (e.target.id) {
+    console.log(e.target.id[e.target.id.length - 1])
+    delete arr[e.target.id[e.target.id.length - 1]];
+    myText.innerHTML = "";
+    arr.forEach((item, index) => {
+      myText.innerHTML += `<img id="clear${
+        index
+      }" src ="./src/Group77.png"/><li>${item}</li>`;
+    });
+   if(myText.innerHTML == ""){
+    myDiv.style.display = "none";
+   }
+  }
+  
+});
 
-
-clear.addEventListener("click",(e)=>{
-console.log("icon clicked")
-})
