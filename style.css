@@ -48,7 +48,7 @@ input {
 
 
 #textdiv {
-  display: none;
+  display: block;
   margin: 0 22px;
   margin-top: 20px;
   border: 1px solid #c4c4c4;

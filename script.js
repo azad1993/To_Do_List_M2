@@ -9,13 +9,23 @@ var clear2 = document.querySelector("#clear2");
 var count = -1;
 let arr = [];
 
+
+
+var myArr = localStorage.getItem("array").split(",");
+console.log(myArr)
+myArr.forEach((item, index) => {
+  if(myArr[index] != ""){
+myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`
+  }
+});
+
 myButton.addEventListener("click", () => {
   if (myInput.value) {
     count++;
     myDiv.style.display = "block";
     arr.push(myInput.value);
     myText.innerHTML += `<img id="clear${count}" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
-    
+    localStorage.setItem("array", arr);
   }
 });
 
@@ -26,7 +36,7 @@ document.addEventListener("keypress", function (e) {
       myDiv.style.display = "block";
       arr.push(myInput.value);
       myText.innerHTML += `<img id="clear${count}" src ="./src/Group77.png"/><li>${myInput.value}</li>`;
-      
+      localStorage.setItem("array", arr);
     }
   }
 });
@@ -44,40 +54,42 @@ plus.addEventListener("click", () => {
 
 icon.addEventListener("click", (e) => {
   var src = e.target.src.split("/");
-
+  myArr = localStorage.getItem("array").split(",");
   if (src[src.length - 1] == "Group73.png") {
     icon.src = "./src/Group91.png";
-    arr.sort();
+    myArr.sort();
     myText.innerHTML = "";
-    arr.forEach((item, index) => {
+    myArr.forEach((item, index) => {
       myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`;
     });
+    localStorage.setItem("array", myArr);
   } else {
     icon.src = "./src/Group73.png";
-    arr.reverse();
+    myArr.reverse();
     myText.innerHTML = "";
-    arr.forEach((item, index) => {
-      myText.innerHTML += `<img id="clear${
-        index
-      }" src ="./src/Group77.png"/><li>${item}</li>`;
+    myArr.forEach((item, index) => {
+      myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`;
+      
     });
+    localStorage.setItem("array", myArr);
   }
 });
 
 myText.addEventListener("click", (e) => {
+  myArr = localStorage.getItem("array").split(",");
   if (e.target.id) {
-    console.log(e.target.id[e.target.id.length - 1])
-    delete arr[e.target.id[e.target.id.length - 1]];
+    console.log(e.target.id[e.target.id.length - 1]);
+    delete myArr[e.target.id[e.target.id.length - 1]]
     myText.innerHTML = "";
-    arr.forEach((item, index) => {
-      myText.innerHTML += `<img id="clear${
-        index
-      }" src ="./src/Group77.png"/><li>${item}</li>`;
+    myArr.forEach((item, index) => {
+      myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`;
     });
-   if(myText.innerHTML == ""){
-    myDiv.style.display = "none";
-   }
+    if (myText.innerHTML == "") {
+      myDiv.style.display = "none";
+    }
+    const results = myArr.filter(element => {
+      return element !== '';
+    });
+    localStorage.setItem("array", results);
   }
-  
 });
-
