@@ -10,7 +10,7 @@ var count = -1;
 let arr = [];
 
 
-
+if(arr){
 var myArr = localStorage.getItem("array").split(",");
 arr= myArr
 console.log(myArr)
@@ -19,6 +19,7 @@ myArr.forEach((item, index) => {
 myText.innerHTML += `<img id="clear${index}" src ="./src/Group77.png"/><li>${item}</li>`
   }
 });
+}
 
 myButton.addEventListener("click", () => {
  
